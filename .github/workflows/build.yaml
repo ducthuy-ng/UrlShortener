@@ -6,7 +6,7 @@ on:
 jobs:
   build_image:
     name: Build Docker image
-    runs-on: macos-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
