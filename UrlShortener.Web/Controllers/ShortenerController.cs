@@ -3,7 +3,7 @@ using UrlShortener.Web.Repository;
 
 namespace UrlShortener.Web.Controllers;
 
-public class ShortenerController(ILogger<ShortenerController> logger, IUrlRepository urlRepository)
+public class ShortenerController(IConfiguration configuration, IUrlRepository urlRepository)
     : Controller
 {
     private readonly Random random = new();
@@ -55,7 +55,7 @@ public class ShortenerController(ILogger<ShortenerController> logger, IUrlReposi
     [HttpGet("preview/{id}")]
     public ActionResult PreviewShortenedUrl(string id)
     {
-        ViewData["ShortenedUrl"] = $"http://localhost:5124/{id}";
+        ViewData["ShortenedUrl"] = $"{configuration["DomainName"]}/{id}";
         return View();
     }
 

@@ -7,13 +7,12 @@
     </div>
     <form action="" method="post">
         <div class="input-url">
-            <input id="url" name="url" placeholder="Insert you URL here">
+            <input id="url" name="url" type="url" placeholder="Insert you URL here">
             <button type="submit">Shorten URL</button>
         </div>
         @if (@ViewData.ContainsKey("ErrorMsg"))
         {
             <div class="input-url-error">Invalid URL</div>
-
         }
     </form>
 </div>
