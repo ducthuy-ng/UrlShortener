@@ -3,8 +3,8 @@ ARG TARGETARCH
 
 WORKDIR /app
 COPY . ./
-RUN dotnet restore --arch $TARGETARCH
-RUN dotnet publish --arch $TARGETARCH -c Release -o out
+RUN dotnet restore --arch=$TARGETARCH
+RUN dotnet publish --arch=$TARGETARCH -c=Release -o=out
 
 # ========================================
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-noble-chiseled AS runtime
