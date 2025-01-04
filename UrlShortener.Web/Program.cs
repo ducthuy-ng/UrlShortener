@@ -16,15 +16,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
-// app.MapControllerRoute(name: "default", pattern: "{controller=Shortener}/{action=Index}/{id?}");
 
 app.Run();
